@@ -1,0 +1,25 @@
+.button {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 22px;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 14px rgba(229, 9, 20, 0.22);
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,55 @@
+.card-cenario {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-cenario:hover {
+  transform: translateY(-4px);
+  border-color: #6c3cff;
+}
+
+.card-categoria {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f0ebff;
+  color: #6c3cff;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.card-cenario h2 {
+  margin: 0 0 12px;
+}
+
+.card-cenario p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.card-button {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  background: #6c3cff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cenario-concluido {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: green;
+
+  font-weight: bold;
+}

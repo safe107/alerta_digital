@@ -1,0 +1,37 @@
+.cenarios-container {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.cenarios-header {
+  max-width: 800px;
+  margin-bottom: 32px;
+}
+
+.cenarios-header h1 {
+  margin-bottom: 12px;
+}
+
+.cenarios-header p {
+  line-height: 1.5;
+}
+
+.cenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .cenarios-container {
+    padding: 24px 16px;
+  }
+
+  .cenarios-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .cenarios-grid {
+    grid-template-columns: 1fr;
+  }
+}

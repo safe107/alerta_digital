@@ -1,0 +1,85 @@
+.feedback-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.feedback-card {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 32px;
+  border-radius: 18px;
+}
+
+.feedback-resultado {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.feedback-pontos {
+  color: #6c3cff;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.feedback-card h2 {
+  margin-bottom: 12px;
+}
+
+.feedback-card p {
+  line-height: 1.5;
+}
+
+.feedback-dica {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f5f2ff;
+  border-radius: 12px;
+}
+
+.feedback-total {
+  margin-top: 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+  .feedback-container {
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  .feedback-card {
+    padding: 24px;
+    border-radius: 16px;
+    margin-top: 24px;
+  }
+
+    .feedback-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.feedback-actions button {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .feedback-actions {
+    flex-direction: column;
+  }
+}
+
+.feedback-estrelas {
+  font-size: 2rem;
+
+  margin-bottom: 18px;
+}
+
+}

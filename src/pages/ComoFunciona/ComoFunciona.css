@@ -1,0 +1,32 @@
+.como-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.como-card {
+  width: 100%;
+  max-width: 560px;
+  background: white;
+  padding: 32px;
+  border-radius: 18px;
+}
+
+.como-card h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.como-passos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.como-passos p {
+  margin: 0;
+  line-height: 1.5;
+}

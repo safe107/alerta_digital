@@ -1,0 +1,66 @@
+.conclusao-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+}
+
+.conclusao-card {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 22px;
+
+  max-width: 650px;
+  width: 100%;
+
+  text-align: center;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.conclusao-card h1 {
+  font-size: 3rem;
+
+  margin-bottom: 12px;
+}
+
+.conclusao-card h2 {
+  margin-bottom: 24px;
+}
+
+.conclusao-card p {
+  line-height: 1.6;
+
+  margin-bottom: 18px;
+}
+
+.conclusao-alerta {
+  margin: 28px 0;
+
+  padding: 22px;
+
+  background: var(--primary-light);
+
+  border-radius: 16px;
+
+  text-align: left;
+}
+
+.conclusao-alerta ul {
+  margin-top: 14px;
+}
+
+.conclusao-pontuacao {
+  margin: 24px 0;
+  padding: 18px;
+  border-radius: 14px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+}

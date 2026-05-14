@@ -1,0 +1,14 @@
+.alternativa-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background: white;
+  font-size: 1rem;
+}
+
+.alternativa-button:hover {
+  background: #f0ebff;
+}

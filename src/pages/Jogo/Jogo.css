@@ -1,0 +1,52 @@
+@media (max-width: 600px) {
+  .jogo-container {
+    padding: 0;
+  }
+
+  .chat-header {
+    border-radius: 0;
+  }
+
+  .chat-container {
+    border-radius: 0;
+    min-height: 55vh;
+  }
+
+  .chat-input-fake {
+    border-radius: 0;
+  }
+
+  .alternativas-container {
+    border-radius: 16px 16px 0 0;
+  }
+
+.progresso-container {
+  width: 100%;
+  height: 10px;
+
+  background: #d9d9d9;
+
+  border-radius: 999px;
+
+  margin: 18px 0 8px;
+
+  overflow: hidden;
+}
+
+.progresso-barra {
+  height: 100%;
+
+  background: var(--primary);
+
+  transition: 0.4s;
+}
+
+.progresso-texto {
+  margin-bottom: 18px;
+
+  font-size: 0.9rem;
+
+  color: #555;
+}
+
+}
