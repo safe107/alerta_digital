@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080";
+const API_URL = "https://alertadigitalapi-production.up.railway.app";
 
 function getAdminToken() {
   return localStorage.getItem("adminToken");
