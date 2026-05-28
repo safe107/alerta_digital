@@ -23,3 +23,12 @@
 .button:active {
   transform: translateY(0);
 }
+
+.button-secondary {
+  background: #4b5563;
+  box-shadow: 0 6px 14px rgba(75, 85, 99, 0.18);
+}
+
+.button-secondary:hover {
+  background: #374151;
+}

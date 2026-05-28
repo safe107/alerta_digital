@@ -1,66 +1,79 @@
 .conclusao-container {
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 24px;
+  padding: 40px 24px;
+  background: #ffffff;
 }
 
 .conclusao-card {
-  background: white;
-
-  padding: 40px;
-
-  border-radius: 22px;
-
-  max-width: 650px;
+  max-width: 660px;
   width: 100%;
-
   text-align: center;
+}
 
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+.conclusao-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 16px;
+  border: 4px solid var(--success);
+  border-radius: 50%;
+  color: var(--success);
+  font-size: 2.35rem;
+  font-weight: 900;
 }
 
 .conclusao-card h1 {
-  font-size: 3rem;
-
-  margin-bottom: 12px;
-}
-
-.conclusao-card h2 {
-  margin-bottom: 24px;
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.12;
 }
 
 .conclusao-card p {
+  max-width: 520px;
+  margin: 0 auto 20px;
   line-height: 1.6;
-
-  margin-bottom: 18px;
-}
-
-.conclusao-alerta {
-  margin: 28px 0;
-
-  padding: 22px;
-
-  background: var(--primary-light);
-
-  border-radius: 16px;
-
-  text-align: left;
-}
-
-.conclusao-alerta ul {
-  margin-top: 14px;
 }
 
 .conclusao-pontuacao {
-  margin: 24px 0;
+  display: grid;
+  gap: 6px;
+  max-width: 300px;
+  margin: 24px auto;
   padding: 18px;
-  border-radius: 14px;
+  border: 1px solid #ffd8dc;
+  border-radius: var(--radius-sm);
   background: var(--primary-light);
   color: var(--primary);
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 800;
+}
+
+.conclusao-pontuacao strong {
+  color: var(--text);
+  font-size: 1.45rem;
+}
+
+.conclusao-alerta {
+  max-width: 520px;
+  margin: 26px auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  text-align: left;
+}
+
+.conclusao-alerta strong {
+  color: var(--text);
+}
+
+.conclusao-alerta ul {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+  line-height: 1.7;
 }

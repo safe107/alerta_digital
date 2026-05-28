@@ -3,28 +3,119 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 40px 24px;
+  background: #ffffff;
+  position: relative;
 }
 
 .nome-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   text-align: center;
 }
 
 .nome-card h1 {
-  margin-bottom: 12px;
+  margin: 0 0 26px;
+  color: var(--text);
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
+  line-height: 1.2;
 }
 
-.nome-card p {
-  margin-bottom: 24px;
+.nome-progress-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 22px;
+  padding: 16px;
+  background: #f9fafb;
+  text-align: left;
+}
+
+.nome-progress-card span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.nome-progress-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.08rem;
+}
+
+.nome-progress-card p {
+  margin: 6px 0 14px;
+  font-size: 0.92rem;
+}
+
+.nome-progress-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nome-progress-actions button {
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.nome-progress-actions button + button {
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+}
+
+.nome-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-weight: 700;
+  text-align: left;
 }
 
 .nome-input {
   width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 16px;
+  min-height: 50px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+  background: #ffffff;
+  color: var(--text);
   font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.nome-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.1);
+}
+
+.nome-admin-button {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  background: #ffffff;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: 0.2s;
+}
+
+.nome-admin-button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }

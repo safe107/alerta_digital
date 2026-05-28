@@ -1,34 +1,63 @@
 .cenarios-container {
   min-height: 100vh;
-  padding: 40px;
+  padding: 56px clamp(20px, 6vw, 72px);
+  background: #ffffff;
 }
 
 .cenarios-header {
-  max-width: 800px;
-  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: end;
+  max-width: 980px;
+  margin: 0 auto 30px;
 }
 
 .cenarios-header h1 {
-  margin-bottom: 12px;
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.12;
 }
 
-.cenarios-header p {
-  line-height: 1.5;
+.cenarios-header p:not(.page-kicker) {
+  max-width: 620px;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.ranking-link {
+  min-height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--secondary);
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(245, 158, 11, 0.2);
 }
 
 .cenarios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .cenarios-container {
-    padding: 24px 16px;
+    padding: 34px 18px;
   }
 
-  .cenarios-header h1 {
-    font-size: 1.7rem;
+  .cenarios-header {
+    grid-template-columns: 1fr;
+  }
+
+  .ranking-link {
+    width: fit-content;
   }
 
   .cenarios-grid {

@@ -11,7 +11,6 @@ import "./Conclusao.css";
 
 function Conclusao() {
   const [pontuacaoFinal, setPontuacaoFinal] = useState(null);
-
   const navigate = useNavigate();
 
   const jogadorId = Number(localStorage.getItem("jogadorId"));
@@ -21,17 +20,17 @@ function Conclusao() {
     async function carregarPontuacao() {
       try {
         const ranking = await buscarRanking();
-
         const jogadorAtual = ranking.find((jogador) => jogador.id === jogadorId);
 
         if (jogadorAtual) {
           setPontuacaoFinal(jogadorAtual.pontuacaoTotal);
+          localStorage.setItem("pontuacaoTotal", String(jogadorAtual.pontuacaoTotal));
         } else {
-          setPontuacaoFinal(0);
+          setPontuacaoFinal(Number(localStorage.getItem("pontuacaoTotal")) || 0);
         }
       } catch (error) {
         console.error(error);
-        setPontuacaoFinal(0);
+        setPontuacaoFinal(Number(localStorage.getItem("pontuacaoTotal")) || 0);
       }
     }
 
@@ -46,34 +45,34 @@ function Conclusao() {
     <PageTransition>
       <main className="conclusao-container">
         <section className="conclusao-card">
-          <h1>🎉 Parabéns!</h1>
-
-          <h2>{nome}</h2>
-
-          <p>Você concluiu o treinamento do Alerta Digital.</p>
-
-          <div className="conclusao-pontuacao">
-            Pontuação final: <strong>{pontuacaoFinal} pontos</strong>
+          <div className="conclusao-icon" aria-hidden="true">
+            ✓
           </div>
 
+          <p className="page-kicker">Treinamento conclu&iacute;do</p>
+          <h1>Parab&eacute;ns, {nome}!</h1>
+
           <p>
-            Agora você está mais preparado para identificar golpes digitais
-            e agir com segurança na internet.
+            Voc&ecirc; concluiu o treinamento do Alerta Digital e est&aacute; mais
+            preparado para reconhecer golpes digitais.
           </p>
 
+          <div className="conclusao-pontuacao">
+            Pontua&ccedil;&atilde;o final
+            <strong>{pontuacaoFinal} pontos</strong>
+          </div>
+
           <div className="conclusao-alerta">
-            Continue sempre desconfiando de:
+            <strong>Continue desconfiando de:</strong>
             <ul>
               <li>Pedidos urgentes de dinheiro</li>
               <li>Links desconhecidos</li>
-              <li>Promoções milagrosas</li>
-              <li>Mensagens de números estranhos</li>
+              <li>Promo&ccedil;&otilde;es milagrosas</li>
+              <li>Mensagens de n&uacute;meros estranhos</li>
             </ul>
           </div>
 
-          <Button onClick={() => navigate("/ranking")}>
-            Ver Ranking Final
-          </Button>
+          <Button onClick={() => navigate("/ranking")}>Ver ranking final</Button>
         </section>
       </main>
     </PageTransition>
