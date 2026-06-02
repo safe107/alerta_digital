@@ -1,8 +1,8 @@
 import "./ChatBubble.css";
 
-function ChatBubble({ texto }) {
+function ChatBubble({ texto, linkVisual = false }) {
   return (
-    <div className="chat-bubble golpista">
+    <div className={`chat-bubble golpista ${linkVisual ? "chat-bubble--link" : ""}`.trim()}>
       <p>{texto}</p>
     </div>
   );

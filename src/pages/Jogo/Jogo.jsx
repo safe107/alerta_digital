@@ -10,6 +10,22 @@ import Loading from "../../components/Loading/Loading";
 
 import "./Jogo.css";
 
+function montarMensagensComLink(mensagens, cenarioId) {
+  if (!mensagens.length) {
+    return [];
+  }
+
+  return [
+    ...mensagens,
+    {
+      id: `link-visual-${cenarioId}`,
+      texto: "https://clique aqui.com.br",
+      remetente: mensagens[0]?.remetente,
+      linkVisual: true,
+    },
+  ];
+}
+
 function Jogo() {
   const [cenario, setCenario] = useState(null);
   const [mensagensVisiveis, setMensagensVisiveis] = useState([]);
@@ -46,8 +62,9 @@ function Jogo() {
     if (!cenario || !cenario.mensagens) return;
 
     const timers = [];
+    const mensagensComLink = montarMensagensComLink(cenario.mensagens, id);
 
-    cenario.mensagens.forEach((mensagem, index) => {
+    mensagensComLink.forEach((mensagem, index) => {
       const timer = setTimeout(() => {
         setMensagensVisiveis((prev) => [...prev, mensagem]);
       }, index * 1200);
@@ -59,7 +76,7 @@ function Jogo() {
       setMensagensVisiveis([]);
       timers.forEach((timer) => clearTimeout(timer));
     };
-  }, [cenario]);
+  }, [cenario, id]);
 
   useEffect(() => {
     if (chatRef.current) {
@@ -72,7 +89,7 @@ function Jogo() {
   }
 
   const dadosCenario = cenario.cenario || cenario;
-  const mensagens = cenario.mensagens || [];
+  const mensagens = montarMensagensComLink(cenario.mensagens || [], id);
   const remetente = mensagens?.[0]?.remetente || "Contato desconhecido";
   const progresso = Math.min((numeroCenario / 5) * 100, 100);
   const mensagensCarregadas = mensagensVisiveis.length === mensagens.length;
@@ -111,6 +128,7 @@ function Jogo() {
                 key={mensagem.id}
                 texto={mensagem.texto}
                 remetente={mensagem.remetente}
+                linkVisual={mensagem.linkVisual}
               />
             ))}
 
