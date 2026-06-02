@@ -41,6 +41,9 @@ function LoginAdmin() {
         </label>
 
         <button type="submit">Entrar</button>
+        <button type="button" className="admin-login-back" onClick={() => navigate("/jogador")}>
+          Voltar ao jogo
+        </button>
       </form>
     </main>
   );

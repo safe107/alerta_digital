@@ -77,7 +77,14 @@ function GerenciarAlternativas() {
               <td>{item.texto}</td><td>{item.tipoResultado}</td><td>{item.pontos}</td><td>{item.perguntaId}</td>
               <td className="admin-actions">
                 <button className="admin-button ghost" onClick={() => { setAlternativa(item); setEditandoAlternativa(item.id); }}>Editar</button>
-                <button className="admin-button danger" onClick={async () => { await adminApi.excluirAlternativa(item.id); carregar(); }}>Excluir</button>
+                <button className="admin-button danger" onClick={async () => {
+                  try {
+                    await adminApi.excluirAlternativa(item.id);
+                    carregar();
+                  } catch (error) {
+                    alert(error.message || "Erro ao excluir alternativa.");
+                  }
+                }}>Excluir</button>
               </td>
             </tr>
           ))}</tbody>
@@ -103,7 +110,14 @@ function GerenciarAlternativas() {
               <td>{item.titulo}</td><td>{item.mensagem}</td><td>{item.tipoResultado}</td><td>{item.alternativaId}</td>
               <td className="admin-actions">
                 <button className="admin-button ghost" onClick={() => { setFeedback(item); setEditandoFeedback(item.id); }}>Editar</button>
-                <button className="admin-button danger" onClick={async () => { await adminApi.excluirFeedback(item.id); carregar(); }}>Excluir</button>
+                <button className="admin-button danger" onClick={async () => {
+                  try {
+                    await adminApi.excluirFeedback(item.id);
+                    carregar();
+                  } catch (error) {
+                    alert(error.message || "Erro ao excluir feedback.");
+                  }
+                }}>Excluir</button>
               </td>
             </tr>
           ))}</tbody>

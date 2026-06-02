@@ -50,7 +50,14 @@ function GerenciarRanking() {
               <td>{item.dataCriacao}</td>
               <td className="admin-actions">
                 <button className="admin-button ghost" onClick={() => editarPontuacao(item.id, item.pontuacaoTotal)}>Editar pontos</button>
-                <button className="admin-button danger" onClick={async () => { await adminApi.excluirJogador(item.id); carregar(); }}>Remover</button>
+                <button className="admin-button danger" onClick={async () => {
+                  try {
+                    await adminApi.excluirJogador(item.id);
+                    carregar();
+                  } catch (error) {
+                    alert(error.message || "Erro ao remover jogador.");
+                  }
+                }}>Remover</button>
               </td>
             </tr>
           ))}</tbody>

@@ -73,7 +73,14 @@ function GerenciarCenarios() {
               <td>{item.titulo}</td><td>{item.categoria}</td><td>{item.ativo ? "Sim" : "Nao"}</td>
               <td className="admin-actions">
                 <button className="admin-button ghost" onClick={() => { setCenario(item); setEditandoCenario(item.id); }}>Editar</button>
-                <button className="admin-button danger" onClick={async () => { await adminApi.excluirCenario(item.id); carregar(); }}>Excluir</button>
+                <button className="admin-button danger" onClick={async () => {
+                  try {
+                    await adminApi.excluirCenario(item.id);
+                    carregar();
+                  } catch (error) {
+                    alert(error.message || "Erro ao excluir cenario.");
+                  }
+                }}>Excluir</button>
               </td>
             </tr>
           ))}</tbody>
@@ -99,7 +106,14 @@ function GerenciarCenarios() {
               <td>{item.ordem}</td><td>{item.texto}</td><td>{item.remetente}</td><td>{item.cenarioId}</td>
               <td className="admin-actions">
                 <button className="admin-button ghost" onClick={() => { setMensagem(item); setEditandoMensagem(item.id); }}>Editar</button>
-                <button className="admin-button danger" onClick={async () => { await adminApi.excluirMensagem(item.id); carregar(); }}>Excluir</button>
+                <button className="admin-button danger" onClick={async () => {
+                  try {
+                    await adminApi.excluirMensagem(item.id);
+                    carregar();
+                  } catch (error) {
+                    alert(error.message || "Erro ao excluir mensagem.");
+                  }
+                }}>Excluir</button>
               </td>
             </tr>
           ))}</tbody>

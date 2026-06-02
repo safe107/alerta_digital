@@ -1,4 +1,5 @@
-const API_URL = "https://alertadigitalapi-production.up.railway.app";
+const API_URL = import.meta.env.VITE_API_URL
+  || (["localhost", "127.0.0.1"].includes(window.location.hostname) ? "http://localhost:8080" : "");
 
 function getAdminToken() {
   return localStorage.getItem("adminToken");
@@ -15,7 +16,15 @@ async function adminRequest(path, options = {}) {
   });
 
   if (!response.ok) {
-    throw new Error("Erro na operacao administrativa");
+    const detalhe = await response.text();
+    let mensagem;
+    try {
+      const erro = JSON.parse(detalhe);
+      mensagem = erro.mensagem || erro.message || erro.error;
+    } catch {
+      // Mantem o texto bruto quando a API nao responder JSON.
+    }
+    throw new Error(mensagem || detalhe || "Erro na operacao administrativa");
   }
 
   if (response.status === 204) {

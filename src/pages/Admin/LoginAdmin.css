@@ -51,6 +51,12 @@
   cursor: pointer;
 }
 
+.admin-login-card .admin-login-back {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+}
+
 .admin-login-error {
   margin: 0;
   color: #b91c1c;

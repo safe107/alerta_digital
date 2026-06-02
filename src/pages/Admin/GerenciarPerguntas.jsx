@@ -56,7 +56,14 @@ function GerenciarPerguntas() {
               <td>{item.enunciado}</td><td>{item.contexto}</td><td>{item.cenarioId}</td>
               <td className="admin-actions">
                 <button className="admin-button ghost" onClick={() => { setPergunta(item); setEditando(item.id); }}>Editar</button>
-                <button className="admin-button danger" onClick={async () => { await adminApi.excluirPergunta(item.id); carregar(); }}>Excluir</button>
+                <button className="admin-button danger" onClick={async () => {
+                  try {
+                    await adminApi.excluirPergunta(item.id);
+                    carregar();
+                  } catch (error) {
+                    alert(error.message || "Erro ao excluir pergunta.");
+                  }
+                }}>Excluir</button>
               </td>
             </tr>
           ))}</tbody>
